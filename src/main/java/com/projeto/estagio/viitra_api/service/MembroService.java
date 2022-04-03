@@ -1,4 +1,4 @@
-package com.projeto.estagio.viitra_api.service.impl;
+package com.projeto.estagio.viitra_api.service;
 
 import java.util.Optional;
 
@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 import com.projeto.estagio.viitra_api.DTO.MembroDTO;
 import com.projeto.estagio.viitra_api.database.MembroRepository;
 import com.projeto.estagio.viitra_api.model.Membro;
-import com.projeto.estagio.viitra_api.service.contrato.IMembroService;
 
 @Service
-public class MembroServiceImpl implements IMembroService {
+public class MembroService {
 	
 	@Autowired
 	private MembroRepository membroRepository;

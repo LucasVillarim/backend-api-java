@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.estagio.viitra_api.DTO.TarefaDTO;
 import com.projeto.estagio.viitra_api.model.Tarefa;
-import com.projeto.estagio.viitra_api.service.impl.TarefaServiceImpl;
+import com.projeto.estagio.viitra_api.service.TarefaService;
 
 @RestController
 @RequestMapping("/api/tarefas")
 public class TarefasController {
 
 	@Autowired
-	private TarefaServiceImpl tarefaService;
+	private TarefaService tarefaService;
 
 	@GetMapping
 	public ResponseEntity<?> buscarTarefas() {

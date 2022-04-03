@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projeto.estagio.viitra_api.DTO.MembroDTO;
 import com.projeto.estagio.viitra_api.database.MembroRepository;
 import com.projeto.estagio.viitra_api.model.Membro;
-import com.projeto.estagio.viitra_api.service.impl.MembroServiceImpl;
+import com.projeto.estagio.viitra_api.service.MembroService;
 
 @RestController
-@RequestMapping("/api/usuarios")
-public class UsuariosController {
+@RequestMapping("/api/membros")
+public class MembroController {
 
 	@Autowired
 	private MembroRepository membroRepository;
 
 	@Autowired
-	private MembroServiceImpl membroService;
+	private MembroService membroService;
 
 	@GetMapping
 	public List<Membro> buscarTodos() {

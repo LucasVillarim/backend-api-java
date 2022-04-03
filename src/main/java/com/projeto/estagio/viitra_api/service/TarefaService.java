@@ -1,4 +1,4 @@
-package com.projeto.estagio.viitra_api.service.impl;
+package com.projeto.estagio.viitra_api.service;
 
 import java.util.Calendar;
 import java.util.List;
@@ -11,12 +11,9 @@ import com.projeto.estagio.viitra_api.database.MembroRepository;
 import com.projeto.estagio.viitra_api.database.TarefasRepository;
 import com.projeto.estagio.viitra_api.model.Membro;
 import com.projeto.estagio.viitra_api.model.Tarefa;
-import com.projeto.estagio.viitra_api.service.contrato.ITarefaService;
 
 @Service
-public class TarefaServiceImpl implements ITarefaService {
-
-	private static final int PRIMEIRA_POSICAO = 0;
+public class TarefaService {
 
 	@Autowired
 	private TarefasRepository tarefasRepository;
@@ -29,7 +26,7 @@ public class TarefaServiceImpl implements ITarefaService {
 		Calendar calendar = Calendar.getInstance();
 		long dataHoraMilisegundos = calendar.getTimeInMillis();
 		
-		Membro donoDaTarefa = membroRepository.buscarMembroPeloEmail(membroId).get(PRIMEIRA_POSICAO);
+		Membro donoDaTarefa = membroRepository.buscarMembroPeloEmail(membroId).get(0);
 
 		tarefaModel.setNome(tarefa.getNome());
 		tarefaModel.setFinalizada(tarefa.isFinalizada());
